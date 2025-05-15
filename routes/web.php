@@ -33,3 +33,6 @@ Route::get('/blog', [DemoController::class, 'blog']);
 
 Route::get('/admin/category',[CategoryController::class,'admin_category'])->name('admin.category.admin_category');
 Route::get('/admin/category.admin_create',[CategoryController::class,'admin_create'])->name('admin.category.admin_create');
+Route::get('/admin/category.{id}',[CategoryController::class,'admin_edit'])->name('admin.category.admin_edit');
+
+Route::post('/admin/category.admin_store',[CategoryController::class,'admin_store'])->name('admin.category.admin_store');
