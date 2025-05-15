@@ -1,10 +1,9 @@
 @extends('layouts.app-layout')
 
-@section('title','blog Page')
+@section('title','Blog Page Title')
 
 @section('content')
-    <div class="container mt-5">
-      <div class="row">
+<div class="row">
         <div class="col-lg-8">
           <!-- Post content-->
           <article>
@@ -123,5 +122,4 @@
           </div>
         </div>
       </div>
-    </div>
 @endsection

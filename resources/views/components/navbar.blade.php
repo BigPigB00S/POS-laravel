@@ -37,7 +37,7 @@
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li>
-                  <a class="dropdown-item" href="./admin/category/index.html"
+                  <a class="dropdown-item" href="{{route('admin.category.admin_category')}}"
                     >Category</a
                   >
                 </li>
