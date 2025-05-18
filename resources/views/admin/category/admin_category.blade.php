@@ -21,14 +21,16 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Page</td>
-                            <td>
-                                <a class="btn btn-primary btn-sm"
-                                    href={{ route('admin.category.admin_edit', ['id' => 1]) }}" role="button">Edit</a>
-                            </td>
-                        </tr>
+                        @foreach($categories as $categories)
+                            <tr>
+                                <td>{{$loop->iteration}}</td>
+                                <td>{{$categories->name}}</td>
+                                <td>
+                                    <a class="btn btn-primary btn-sm"
+                                        href={{ route('admin.category.admin_edit', ['id' => $categories->id]) }}" role="button">Edit</a>
+                                </td>
+                            </tr>
+                        @endforeach
                     </tbody>
                     <tfoot>
                         <tr>

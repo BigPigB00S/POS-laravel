@@ -8,7 +8,8 @@ use App\Models\Category;
 class CategoryController extends Controller
 {
     public function admin_category() {
-        return view ('admin.category.admin_category');
+        $categories = Category::all();
+        return view ('admin.category.admin_category',['categories' => $categories]);
     }
 
     public function admin_create() {
@@ -22,12 +23,17 @@ class CategoryController extends Controller
         $category->name = $request->name;
         $category->save();
 
-
+        //redirect to route
+        return redirect()->route('admin.category.admin_category');
     }
 
     public function admin_edit($id) {
-        dd('admin_edit',$id);
-        return view ('admin.category.admin_edit');
+        $category = Category::findOrFail($id);
+        return view ('admin.category.admin_edit',['category' => $category]);
+    }
+
+    public function admin_update(Request $request, $id) {
+        dd('admin_update',$id);
     }
 
 
